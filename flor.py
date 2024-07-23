@@ -1,8 +1,9 @@
+#Función para preguntar si hubo flor en la ronda.
 def preguntar_flor():
     flor = input("Hay flor en esta mano? (s/n): ")
     return flor.lower() == 's'
 
-
+#Función para actualizar el puntaje en caso de que haya flor.
 def gestionar_flor(pts_equipo_1, pts_equipo_2):
     pts = 3
     while True:
