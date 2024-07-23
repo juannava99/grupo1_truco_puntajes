@@ -1,5 +1,18 @@
 # grupo1_truco_puntajes
+
 Gestion de puntajes Truco
+
+Participantes:
+Nava Juan - Rol
+Gonzalez Gil Danielys - Rol
+Milito Mario - Rol
+Lunda Ronaldo - Rol
+Roldan Capponi Maximiliano - Rol
+Ortiz Federico - Rol 
+Sebastian Martinez Bayeto - Rol
+
+Estructura del Proyecto:
+
 
 Instalacion y uso del repositorio:
 
