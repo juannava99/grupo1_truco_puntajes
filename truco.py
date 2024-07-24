@@ -8,4 +8,5 @@ def puntos_truco(opcion):
 
 #Función para actualizar el puntaje en caso de que haya truco.
 def gestionar_truco(puntaje_equipo_1, puntaje_equipo_2):
+    
     pass
