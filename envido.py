@@ -1,4 +1,4 @@
-
+####Fede, ahi subi el modulo truco, en relacion a este modulo entiendo que la funcion preguntar_envido y puntos_envido, en caso de envido envido no querido sumaria 1 puntos, y deberian ser 3
 
 # Función para preguntar el tipo de envido.
 def preguntar_envido():
@@ -53,3 +53,25 @@ def gestionar_envido(puntaje_equipo_1,puntaje_equipo_2):
     else:
         print("No se jugo el envido en esta mano.")
     return puntaje_equipo_1, puntaje_equipo_2
+
+def main():
+    puntaje_equipo_1 = 0
+    puntaje_equipo_2 = 0
+    while True:
+        print("Puntaje actual:")
+        print(f"Equipo 1: {puntaje_equipo_1}")
+        print(f"Equipo 2: {puntaje_equipo_2}")
+        print("¿Qué deseas hacer?")
+        print("1. Anotar envido")
+        ###print (Anotar envido)
+        ###print (Anotar irse al mazo)
+        print("2. Salir")
+        opcion = input("Ingrese una opción: ")
+        if opcion == "1":
+            puntaje_equipo_1, puntaje_equipo_2 = gestionar_envido(puntaje_equipo_1, puntaje_equipo_2)
+        elif opcion == "2":
+            break
+        else:
+            print("Opción inválida. Por favor, ingrese una opción válida.")
+
+main()
