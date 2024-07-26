@@ -35,35 +35,41 @@ def gestionar_truco(puntaje_equipo_1, puntaje_equipo_2):
     opcion = preguntar_truco()
     puntos = puntos_truco(opcion)
     if puntos > 0:
-        print(f"Se anotaron {puntos} puntos.")
         equipo_ganador = input("¿Qué equipo ganó el truco? (1/2): ")
         if equipo_ganador == "1":
             puntaje_equipo_1 += puntos
         else:
             puntaje_equipo_2 += puntos
     else:
-        print("No se anotaron puntos.")
+        equipo_ganador = input("¿Qué equipo ganó la mano? (1/2): ")
+        puntos = 1
+        if equipo_ganador == "1":
+            puntaje_equipo_1 += puntos
+        else:
+            puntaje_equipo_2 += puntos
+                
+    print(f"Se anotaran {puntos} puntos.")
     return puntaje_equipo_1, puntaje_equipo_2
 
-def main():
-    puntaje_equipo_1 = 0
-    puntaje_equipo_2 = 0
-    while True:
-        print("Puntaje actual:")
-        print(f"Equipo 1: {puntaje_equipo_1}")
-        print(f"Equipo 2: {puntaje_equipo_2}")
-        print("¿Qué deseas hacer?")
-        print("1. Anotar truco")
-        ###print (Anotar envido)
-        ###print (Anotar irse al mazo)
-        print("2. Salir")
-        opcion = input("Ingrese una opción: ")
-        if opcion == "1":
-            puntaje_equipo_1, puntaje_equipo_2 = gestionar_truco(puntaje_equipo_1, puntaje_equipo_2)
-        elif opcion == "2":
-            break
-        else:
-            print("Opción inválida. Por favor, ingrese una opción válida.")
-
-main()
+#def main():
+#    puntaje_equipo_1 = 0
+#    puntaje_equipo_2 = 0
+#    while True:
+#        print("Puntaje actual:")
+#        print(f"Equipo 1: {puntaje_equipo_1}")
+#        print(f"Equipo 2: {puntaje_equipo_2}")
+#        print("¿Qué deseas hacer?")
+#        print("1. Anotar truco")
+#        ###print (Anotar envido)
+#        ###print (Anotar irse al mazo)
+#        print("2. Salir")
+#        opcion = input("Ingrese una opción: ")
+#        if opcion == "1":
+#            puntaje_equipo_1, puntaje_equipo_2 = gestionar_truco(puntaje_equipo_1, puntaje_equipo_2)
+#        elif opcion == "2":
+#            break
+#        else:
+#            print("Opción inválida. Por favor, ingrese una opción válida.")
+#
+#main()
 

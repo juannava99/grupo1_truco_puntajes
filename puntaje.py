@@ -1,7 +1,7 @@
 
 #Función para verificar si unequipo ha ganado.
 def verificar_victoria(puntaje):
-    if puntaje <= 30:
+    if puntaje == 30:
         return True
     else:
         return False
