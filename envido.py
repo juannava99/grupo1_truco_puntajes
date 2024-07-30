@@ -29,7 +29,7 @@ def puntos_envido(opcion, puntaje_ganador,puntaje_perdedor):
     #creo que la de falta envido esta mal, habria que chequear
     
     elif opcion == 'falta envido':
-        if puntaje_perdedor < 15: 
+        if puntaje_perdedor =< 15: 
             return 30 - puntaje_ganador
         else:
             return 30 - puntaje_perdedor
