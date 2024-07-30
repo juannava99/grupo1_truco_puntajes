@@ -1,6 +1,6 @@
 #Función para preguntar si hubo flor en la ronda.
 def preguntar_flor():
-    flor = input("Hay flor en esta mano? (s/n): ")
+    flor = input("Hay flor en esta mano? (s/n): ").lower()
     if flor == "s":
         return True
     elif flor == "n":
@@ -13,18 +13,17 @@ def preguntar_flor():
 def gestionar_flor(pts_equipo_1, pts_equipo_2):
         
     if(preguntar_flor()):
-        pts = 3
         while True:
-            ganador = input("¿Quién ganó la flor? (e1 o e2): ").lower()
-            if ganador in ['e1', 'e2']:
-                if ganador == 'e1':
-                    pts_equipo_1 += pts
-                    print(f"Equipo 1 gana {pts} puntos por la flor.")
-                elif ganador == 'e2':
-                    pts_equipo_2 += pts
-                    print(f"Equipo 2 gana {pts} puntos por la flor.")
+            ganador = input("¿Quién ganó la flor? (1/2): ")
+            if ganador in ['1', '2']:
+                if ganador == '1':
+                    pts_equipo_1 += 3
+                    print(f"Equipo 1 gana 3 puntos por la flor.\n")
+                elif ganador == '2':
+                    pts_equipo_2 += 3
+                    print(f"Equipo 2 gana 3 puntos por la flor.\n")
                 break
             else:
-                print("Introduzca un valor válido (e1 o e2)")
+                print("Introduzca un valor válido (1 o 2)")
 
     return pts_equipo_1, pts_equipo_2

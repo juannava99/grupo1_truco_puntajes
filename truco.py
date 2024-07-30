@@ -48,7 +48,7 @@ def gestionar_truco(puntaje_equipo_1, puntaje_equipo_2):
         else:
             puntaje_equipo_2 += puntos
                 
-    print(f"Se anotaran {puntos} puntos.")
+    print(f"Se anotaran {puntos} puntos al equipo {equipo_ganador}\n")
     return puntaje_equipo_1, puntaje_equipo_2
 
 #def main():
