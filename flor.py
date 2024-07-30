@@ -18,10 +18,10 @@ def gestionar_flor(pts_equipo_1, pts_equipo_2):
             if ganador in ['1', '2']:
                 if ganador == '1':
                     pts_equipo_1 += 3
-                    print(f"Equipo 1 gana 3 puntos por la flor.\n")
+                    print(f"Se anotaran 3 puntos al equipo 1.\n")
                 elif ganador == '2':
                     pts_equipo_2 += 3
-                    print(f"Equipo 2 gana 3 puntos por la flor.\n")
+                    print(f"Se anotaran 3 puntos al equipo 2.\n")
                 break
             else:
                 print("Introduzca un valor válido (1 o 2)")

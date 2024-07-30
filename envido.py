@@ -1,3 +1,4 @@
+
 # Función para preguntar el tipo de envido.
 def preguntar_envido():
     x = input("¿Se jugó el envido? (s/n): ").lower()
@@ -6,7 +7,7 @@ def preguntar_envido():
     elif x == 's':
         opciones_validas = ["1", "2", "3", "4", "5"]
         while True:
-            opcion = input("¿Qué tipo de envido se jugó?\n1.envido\n2.real envido\n3.envido envido\n4.falta envido\n5.no querido\nIngrese la opcion: ").lower()
+            opcion = input("¿Qué tipo de envido se jugó?\n1.Envido\n2.Real envido\n3.Envido envido\n4.Falta envido\n5.No querido\nIngrese la opcion: ").lower()
             if opcion in opciones_validas:
                 return True, opcion
             else:
@@ -16,21 +17,26 @@ def preguntar_envido():
         return preguntar_envido()
 
 #Función para calcular los puntos del envido.
-def puntos_envido(opcion, puntaje_ganador,puntaje_perdedor):
+def puntos_envido(opcion, puntaje_equipo_1,puntaje_equipo_2,ganador):
+    puntaje_max = 30
+    en_las_malas = 15
     if opcion == "1":
         return 2 
     elif opcion == "2":
         return 3
     elif opcion == "3":
         return 4
-    
-    #creo que la de falta envido esta mal, habria que chequear
-    
     elif opcion == "4":
-        if puntaje_perdedor <= 15: 
-            return 30 - puntaje_ganador
+        if ganador == "1":
+            if puntaje_equipo_2 <= en_las_malas: 
+                return puntaje_max - puntaje_equipo_1
+            else:
+                return puntaje_max - puntaje_equipo_2
         else:
-            return 30 - puntaje_perdedor
+            if puntaje_equipo_1 <= en_las_malas: 
+                return puntaje_max - puntaje_equipo_2
+            else:
+                return puntaje_max - puntaje_equipo_1
     elif opcion == "5":
         return 1 
     return 0 # en caso de que no coincida con ninguna 
@@ -39,8 +45,8 @@ def puntos_envido(opcion, puntaje_ganador,puntaje_perdedor):
 def gestionar_envido(puntaje_equipo_1,puntaje_equipo_2):
     se_jugo,opcion = preguntar_envido()
     if se_jugo:
-        puntos = puntos_envido(opcion,puntaje_equipo_1,puntaje_equipo_2)
         ganador = input("Quien gano el envido? (1/2): ")
+        puntos = puntos_envido(opcion,puntaje_equipo_1,puntaje_equipo_2,ganador)
         if ganador == '1':
             print(f"Se anotaran {puntos} puntos al equipo {ganador}\n")
             puntaje_equipo_1 += puntos
