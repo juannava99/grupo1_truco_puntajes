@@ -12,7 +12,7 @@ def preguntar_envido():
             else:
                 print("Opción no válida. Por favor, ingrese una opción válida.")
     else:
-        print("Respuesta no válida. Por favor, ingrese 's' o 'n'.")         #si la respuesta no es s o n pide la entrada de nuevo llamando a la misma funcion nuevamente
+        print("Respuesta no válida. Por favor, ingrese 's' o 'n'.")
         return preguntar_envido()
 
 #Función para calcular los puntos del envido.
@@ -51,6 +51,7 @@ def gestionar_envido(puntaje_equipo_1,puntaje_equipo_2):
             print("Opcion no valida, ingrese '1' o '2'.")
             return gestionar_envido(puntaje_equipo_1,puntaje_equipo_2) # en caso de que cargue una opcion no valida vuelve a preguntar
     else:
-        print("No se jugo el envido en esta mano.")
-        return puntaje_equipo_1, puntaje_equipo_2,False
-    return puntaje_equipo_1, puntaje_equipo_2,True
+        print("No se jugó el envido en esta mano.")
+        return puntaje_equipo_1, puntaje_equipo_2, False
+    return puntaje_equipo_1, puntaje_equipo_2, True
+

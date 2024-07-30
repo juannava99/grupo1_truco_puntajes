@@ -24,16 +24,8 @@ def main():
             print(f"Turno del jugador {nombre_equipo_2}")
             es_jugador_1 = True
         puntaje_equipo_1,puntaje_equipo_2,se_jugo_envido = gestionar_envido(puntaje_equipo_1,puntaje_equipo_2)
-        if verificar_victoria(puntaje_equipo_1):
-            print(f"Gano el equipo {nombre_equipo_1}")
-        if verificar_victoria(puntaje_equipo_2):
-            print(f"Gano el equipo {nombre_equipo_2}")
         if not se_jugo_envido:
             puntaje_equipo_1,puntaje_equipo_2 = gestionar_flor(puntaje_equipo_1,puntaje_equipo_2)
-            if verificar_victoria(puntaje_equipo_1):
-                print(f"Gano el equipo {nombre_equipo_1}")
-            if verificar_victoria(puntaje_equipo_2):
-                print(f"Gano el equipo {nombre_equipo_2}")
         ronda += 1
         if verificar_victoria(puntaje_equipo_1):
             print(f"Gano el equipo {nombre_equipo_1}")
