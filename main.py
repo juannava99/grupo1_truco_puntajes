@@ -29,14 +29,18 @@ def main():
         ronda += 1
         if verificar_victoria(puntaje_equipo_1):
             print(f"Gano el equipo {nombre_equipo_1}")
+            break
         if verificar_victoria(puntaje_equipo_2):
             print(f"Gano el equipo {nombre_equipo_2}")
+            break
         puntaje_equipo_1,puntaje_equipo_2 = gestionar_truco(puntaje_equipo_1,puntaje_equipo_2)
         mostrar_puntajes(puntaje_equipo_1,puntaje_equipo_2)
         if verificar_victoria(puntaje_equipo_1):
             print(f"Gano el equipo {nombre_equipo_1}")
+            break
         if verificar_victoria(puntaje_equipo_2):
             print(f"Gano el equipo {nombre_equipo_2}")
+            break
         
         
     
