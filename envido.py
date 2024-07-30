@@ -1,5 +1,3 @@
-####Fede, ahi subi el modulo truco, en relacion a este modulo entiendo que la funcion preguntar_envido y puntos_envido, en caso de envido envido no querido sumaria 1 puntos, y deberian ser 3
-
 # Función para preguntar el tipo de envido.
 def preguntar_envido():
     x = input("¿Se jugó el envido? (s/n): ").lower()
@@ -14,7 +12,7 @@ def preguntar_envido():
             else:
                 print("Opción no válida. Por favor, ingrese una opción válida.")
     else:
-        print("Respuesta no válida. Por favor, ingrese 's' o 'n'.")         #si la respuesta no es s o n pide la entrada de nuevo llamando a la misma funcion nuevamente
+        print("Respuesta no válida. Por favor, ingrese 's' o 'n'.")
         return preguntar_envido()
 
 #Función para calcular los puntos del envido.
@@ -53,31 +51,7 @@ def gestionar_envido(puntaje_equipo_1,puntaje_equipo_2):
             print("Opcion no valida, ingrese '1' o '2'.")
             return gestionar_envido(puntaje_equipo_1,puntaje_equipo_2) # en caso de que cargue una opcion no valida vuelve a preguntar
     else:
-        print("No se jugo el envido en esta mano.")
-        return puntaje_equipo_1, puntaje_equipo_2,False
-    return puntaje_equipo_1, puntaje_equipo_2,True
-<<<<<<< HEAD
-=======
+        print("No se jugó el envido en esta mano.")
+        return puntaje_equipo_1, puntaje_equipo_2, False
+    return puntaje_equipo_1, puntaje_equipo_2, True
 
-#def main():
-#    puntaje_equipo_1 = 0
-#    puntaje_equipo_2 = 0
-#    while True:
-#        print("Puntaje actual:")
-#        print(f"Equipo 1: {puntaje_equipo_1}")
-#        print(f"Equipo 2: {puntaje_equipo_2}")
-#        print("¿Qué deseas hacer?")
-#        print("1. Anotar envido")
-#        ###print (Anotar envido)
-#        ###print (Anotar irse al mazo)
-#        print("2. Salir")
-#        opcion = input("Ingrese una opción: ")
-#        if opcion == "1":
-#            puntaje_equipo_1, puntaje_equipo_2 = gestionar_envido(puntaje_equipo_1, puntaje_equipo_2)
-#        elif opcion == "2":
-#            break
-#        else:
-#            print("Opción inválida. Por favor, ingrese una opción válida.")
-#
-#main()
->>>>>>> 75bd257 (Nuevo Commit)
