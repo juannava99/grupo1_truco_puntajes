@@ -7,46 +7,39 @@ def preguntar_truco():
     opcion = input("Ingrese una opción: ")
     return opcion
 
+
 def puntos_truco(opcion):
     if opcion == "4":
         return 0
+
+    querido = input("¿Querido? (s/n): ").lower()
+    if opcion == "1":
+        return 2 if querido == "s" else 1
+    elif opcion == "2":
+        return 3 if querido == "s" else 2
+    elif opcion == "3":
+        return 4 if querido == "s" else 3
     else:
-        querido = input("¿Querido? (s/n): ")
-        if opcion == "1":
-            if querido.lower() == "s":
-                return 2
-            else:
-                return 1
-        elif opcion == "2":
-            if querido.lower() == "s":
-                return 3
-            else:
-                return 2
-        elif opcion == "3":
-            if querido.lower() == "s":
-                return 4
-            else:
-                return 3
-        else:
-            print("Opción inválida. No se anotaron puntos.")
-            return 0
+        print("Opción inválida. No se anotaron puntos.")
+        return 0
+
 
 def gestionar_truco(puntaje_equipo_1, puntaje_equipo_2):
     opcion = preguntar_truco()
     puntos = puntos_truco(opcion)
-    if puntos > 0:
-        equipo_ganador = input("¿Qué equipo ganó el truco? (1/2): ")
-        if equipo_ganador == "1":
-            puntaje_equipo_1 += puntos
-        else:
-            puntaje_equipo_2 += puntos
-    else:
+
+    if puntos == 0:
         equipo_ganador = input("¿Qué equipo ganó la mano? (1/2): ")
         puntos = 1
-        if equipo_ganador == "1":
-            puntaje_equipo_1 += puntos
-        else:
-            puntaje_equipo_2 += puntos
-                
-    print(f"Se anotaran {puntos} puntos al equipo {equipo_ganador}\n")
+    else:
+        equipo_ganador = input("¿Qué equipo ganó el truco? (1/2): ")
+
+    if equipo_ganador == "1":
+        puntaje_equipo_1 += puntos
+    elif equipo_ganador == "2":
+        puntaje_equipo_2 += puntos
+    else:
+        print("Opción inválida para equipo ganador.")
+
+    print(f"Se anotarán {puntos} puntos al equipo {equipo_ganador}\n")
     return puntaje_equipo_1, puntaje_equipo_2
